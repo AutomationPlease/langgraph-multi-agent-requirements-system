@@ -1,7 +1,7 @@
 [project]
-name = "langgraph-multi-agent-requirements-system"
+name = "langgraph-multi-agent-system"
 version = "0.1.0"
-description = "Multi-agent Requirements Engineering system using LangGraph (Supervisor + Specialist Agents)"
+description = "Multi-agent Engineering system using LangGraph (Supervisor + Specialist Agents)"
 readme = "README.md"
 requires-python = ">=3.12"
 authors = [
@@ -11,7 +11,7 @@ keywords = [
     "langgraph",
     "langchain",
     "multi-agent",
-    "requirements-engineering",
+    "engineering",
     "ai",
     "automation",
 ]
