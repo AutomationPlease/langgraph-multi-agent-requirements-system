@@ -1,5 +1,5 @@
 """
-Main entry point for the Multi-Agent Requirements Engineering System.
+Main entry point for the LangGraph Multi-Agent System.
 
 This provides a clean CLI to interact with the Supervisor + Specialist Agents
 (Requirements_Writer, Data_Analyst, Test_Case_Writer) with delegation support.
@@ -17,13 +17,13 @@ console = Console()
 
 
 def main():
-    """Run the interactive Multi-Agent Requirements Engineering System."""
+    """Run the interactive LangGraph Multi-Agent System."""
 
     # Initialize the supervisor agent
     agent = create_supervisor_agent()
 
     # Welcome banner
-    print("=== Multi-Agent Requirements Engineering System ===")
+    print("=== LangGraph Multi-Agent System ===")
     print("Supervisor + Specialist Agents (Requirements_Writer, Data_Analyst, Test_Case_Writer)")
     print("Delegation & Collaboration Enabled\n")
 
