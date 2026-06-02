@@ -6,11 +6,9 @@ class AgentState(TypedDict):
     """State for the langgraph multi-agent system"""
     messages: Annotated[List[BaseMessage], add_messages]
     
-    # Memory / Context
     current_folder: Optional[str]
     known_files: List[str]
     
-    # Requirements Engineering artifacts
     requirements: Dict[str, Any]
     user_stories: List[Dict]
     test_cases: List[Dict]
