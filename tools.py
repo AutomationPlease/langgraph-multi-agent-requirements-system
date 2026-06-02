@@ -1,3 +1,16 @@
+"""
+This module defines the custom tools available to the LangGraph Requirements Agent(s).
+
+Each tool is decorated with @tool from LangChain so the LLM can decide when to use them.
+The tools provide the agent with capabilities to:
+- Search the web for external information
+- Read and preview Excel/CSV files
+- List files in a directory
+- Perform statistical analysis on datasets
+
+These tools are intentionally practical and focused on real-world data tasks.
+"""
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -7,11 +20,17 @@ import pandas as pd
 from pathlib import Path
 from typing import Optional
 
+# Initialize Tavily client for web search
 tavily = TavilyClient()
 
 @tool
 def web_search(query: str) -> str:
-    """Search the web for current information, best practices, or standards."""
+    """
+    Search the web for information using Tavily.
+    
+    Useful when the agent needs up-to-date or external information
+    that is not available in local files.
+    """
     try:
         results = tavily.search(query, max_results=5)
         return f"Search results for '{query}':\n{results}"
@@ -21,7 +40,12 @@ def web_search(query: str) -> str:
 
 @tool
 def read_file(file_path: str) -> str:
-    """Read the content of a file. Supports .txt, .csv, .xlsx."""
+    """
+    Read and preview the contents of a CSV or Excel file.
+    
+    Returns file metadata (name, shape, columns) along with the first 10 rows.
+    This gives the agent a quick overview of the data without loading everything.
+    """
     try:
         path = Path(file_path)
         if not path.exists():
@@ -45,7 +69,12 @@ def read_file(file_path: str) -> str:
 
 @tool
 def list_folder_files(folder_path: str, file_extension: Optional[str] = None) -> str:
-    """List all files in a folder. Optionally filter by extension (e.g. '.xlsx')."""
+    """
+    List files in a given folder.
+    
+    Optionally filter by file extension (e.g. '.xlsx' or '.csv').
+    Useful for exploring available data files before reading them.
+    """
     try:
         path = Path(folder_path)
         if not path.exists():
@@ -72,7 +101,13 @@ def list_folder_files(folder_path: str, file_extension: Optional[str] = None) ->
 
 @tool
 def analyze_dataframe(file_path: str) -> str:
-    """Analyze a CSV or Excel file and provide insights."""
+    """
+    Perform basic statistical analysis on a CSV or Excel file.
+    
+    Returns row/column counts, missing values, key statistics, and column names.
+    This tool is useful when the agent needs to understand the structure and
+    quality of a dataset.
+    """
     try:
         path = Path(file_path)
         if path.suffix.lower() in ['.xlsx', '.xls']:
