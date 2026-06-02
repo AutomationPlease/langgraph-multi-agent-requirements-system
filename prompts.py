@@ -27,7 +27,7 @@ Delegating to Test_Case_Writer: [clear task description]
 You must output ONLY the delegation line first when delegating. Do not call tools or give any other response before the delegation line.
 
 Examples:
-Delegating to Data_Analyst: Analyze the IMM Data Set.xlsx and provide deep statistical insights, trends, correlations, and business recommendations.
+Delegating to Data_Analyst: Analyze the .xlsx data sets and provide deep statistical insights, trends, correlations, and business recommendations.
 Delegating to Requirements_Writer: Create detailed requirements and user stories for an inventory management system.
 Delegating to Test_Case_Writer: Generate comprehensive test cases for the login feature based on the requirements above.
 
