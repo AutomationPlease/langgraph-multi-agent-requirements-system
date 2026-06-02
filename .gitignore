@@ -1,0 +1,43 @@
+# Python cache and temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+.env/
+
+# Environment variables
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ruff (if you use it)
+.ruff_cache/
+
+# Optional: Ignore local test outputs or temp files
+*.log
+temp/
+tmp/
+
+# IDE / OS files
+.idea/
+.vscode/
+.DS_Store
