@@ -3,7 +3,7 @@ from langgraph.graph import add_messages
 from langchain_core.messages import BaseMessage
 
 class AgentState(TypedDict):
-    """State for the langgraph multi-agent system"""
+    """State mutable state langgraph multi-agent system"""
     messages: Annotated[List[BaseMessage], add_messages]
     
     current_folder: Optional[str]
