@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, AIMessage
 from langgraph.checkpoint.memory import InMemorySaver
@@ -100,17 +99,18 @@ def create_supervisor_agent():
         # Default: use tools or end
         return tools_condition(state)
 
-    # Build the graph
+    # Build LangGRaph workflow
     workflow = StateGraph(AgentState)
-    
     workflow.add_node("supervisor", supervisor_node)
     workflow.add_node("tools", ToolNode(tools))
     workflow.add_node("requirements_writer", requirements_writer_node)
     workflow.add_node("data_analyst", data_analyst_node)
     workflow.add_node("test_case_writer", test_case_writer_node)
 
+    # Entry point for supervisor node
     workflow.add_edge(START, "supervisor")
-    
+
+    # Conditional routing if agents are needed
     workflow.add_conditional_edges(
         "supervisor",
         route_supervisor,
@@ -128,5 +128,6 @@ def create_supervisor_agent():
     workflow.add_edge("data_analyst", "supervisor")
     workflow.add_edge("test_case_writer", "supervisor")
 
+    # Mempry sp the agent(s) can remember previous messages in same thread
     memory = InMemorySaver()
     return workflow.compile(checkpointer=memory)
