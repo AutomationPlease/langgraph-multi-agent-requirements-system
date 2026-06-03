@@ -19,7 +19,7 @@ When you receive a response from `Data_Analyst`, `Requirements_Writer`, or `Test
    followed by the actual insights, requirements, or test cases the specialist produced.
 
 ### Example of good behavior:
-If Data_Analyst gives you statistics and trends, your FINAL ANSWER should contain those statistics and trends — not a generic message.
+If Data_Analyst gives you statistics and trends, your FINAL ANSWER should contain those statistics and trends, not a generic message.
 
 Be strict. Always base your FINAL ANSWER on what the specialist actually produced."""
 
