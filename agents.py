@@ -7,7 +7,7 @@ def create_requirements_writer():
     return create_react_agent(llm, tools=[], name="Requirements_Writer")
 
 def create_data_analyst():
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+    llm = ChatOpenAI(model="gpt-4o", temperature=0.2)
     return create_react_agent(llm, tools=[analyze_dataframe, read_file], name="Data_Analyst")
 
 def create_test_case_writer():
