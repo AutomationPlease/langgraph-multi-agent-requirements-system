@@ -8,7 +8,7 @@ This provides a clean CLI to interact with the Supervisor + Specialist Agents
 from dotenv import load_dotenv
 load_dotenv()
 
-from Backups.supervisor_v1 import create_supervisor_agent
+from supervisor import create_supervisor_agent
 from rich.console import Console
 from rich.markdown import Markdown
 from langchain_core.messages import HumanMessage
