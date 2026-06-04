@@ -67,7 +67,7 @@ Mean: 314.14, Min: 0, Max: 1312.5, Standard Deviation: 268.35
 • 6-Week Demand (6WK_DMD):  
 Mean: 352.24, Min: 0, Max: 1696.9, Standard Deviation: 335.64  
 • Next On Order (NX_ON_ORDER):  
-Mean: 14,662,590, Min: 10,014,320, Max: 16,018,350, Standard Deviation: 2,530,815
+Mean: 145.0, Min: 100.0, Max: 300.0, Standard Deviation: 180.0
 
 Trends and Recommendations:
 1 Inventory Management: Improve controls to reduce variability in on-hand inventory.
@@ -115,7 +115,7 @@ langgraph-multi-agent-system/
 ## Getting Started
 ```bash
 # clone repo
-git clone https://github.com/your-username/langgraph-multi-agent-system.git
+git clone https://github.com/AutomationPlease/langgraph-multi-agent-system.git
 
 # go to project folder
 cd langgraph-multi-agent-system
